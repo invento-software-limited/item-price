@@ -118,13 +118,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Item": {
+		"validate": "item_price.item_price.doc_events.item.extend_validate"
+    },
+    "Item Price": {
+		"validate": "item_price.item_price.doc_events.item_price.extend_validate"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
